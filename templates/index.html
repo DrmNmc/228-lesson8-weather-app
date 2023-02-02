@@ -5,25 +5,24 @@
   <div class="row">
     <div class="col-sm-6">
         <button class="btn btn-primary btn-block" id="get_weather">
-        My Location Weather
+            <h1>My Location Weather</h1>
         </button>
     </div>
     <div class="col-sm-6">
       <button class="btn btn-primary btn-block" id="show-form-btn">
-        Different Location
+          <h1>Different Location</h1>
         </button>
     </div>
   </div>
-<!--     if this is triggered, hide top buttons and move form to center -->
     <script>document.getElementById("show-form-btn").addEventListener("click", function(){
     document.getElementById("location-form").style.display = "block";
     });
 </script>
     <form action ="{% url 'get_weather' %}" method="post" style="display:none;" id="location-form">
         {% csrf_token %}
-        <div class="form-group">
+        <div class="form form-group">
             <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city">
+            <input type="text" class="form form-control" id="city" name="city">
         </div>
         <div class="form-group">
             <label for="state">State</label>
