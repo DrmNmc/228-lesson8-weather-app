@@ -40,45 +40,28 @@
 <!--     <p id=weatherdata></p> -->
 <!--     IF ANYTHING BELOW THIS IS TRIGGERED
     SHOW BOTTOM BUTTON TO START OVER WITH THE RESULTS-->
+
   <div class="row align items-center">
     <div class="col-12">
         <div class="card" id="current-weather-card">
-            <p id=weatherdata></p>
+              <p id="weekday"></p>
+              <p id="minTemp"></p>
+              <p id="maxTemp"></p>
         </div>
     </div>
-  <div class="row align items-center">
-      <div class="col-sm-3">
-      1 day out
+  <div class="row align-items-center">
+  {% for i in '0123' %}
+    <div class="col-sm-3">
+      <div class="card">
+            <p id="date{{ i }}"></p>
+            <p id="weekday{{ i }}"></p>
+            <p id="minTemp{{ i }}"></p>
+            <p id="maxTemp{{ i }}"></p>
+      </div>
     </div>
-      <div class="col-sm-3">
-      2 days out
-    </div>
-      <div class="col-sm-3">
-      3 days out
-    </div>
-      <div class="col-sm-3">
-      4 days out
-    </div>
+  {% endfor %}
+  </div>
 </div>
 {% endblock content %}
-
-
-<!-- <h1>Weather</h1>
-    <form action ="" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city">
-        </div>
-        <div class="form-group">
-            <label for="state">State</label>
-            <select class="form-select" aria-label="state">
-                <option selected>State</option>
-                {% for state in form.state %}
-                    <option value="{{ state }}">{{ state.choices }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-	<p id=weatherdata></p> -->
+</div>
+</div>
