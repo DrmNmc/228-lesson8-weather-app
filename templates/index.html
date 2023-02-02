@@ -5,12 +5,12 @@
   <div class="row">
     <div class="col-sm-6">
         <button class="btn btn-primary btn-block" id="get_weather">
-            <h1>My Location Weather</h1>
+            <h1>My Location</h1>
         </button>
     </div>
     <div class="col-sm-6">
       <button class="btn btn-primary btn-block" id="show-form-btn">
-          <h1>Different Location</h1>
+          <h1>Somewhere Else</h1>
         </button>
     </div>
   </div>
@@ -43,9 +43,14 @@
   <div class="row align items-center">
     <div class="col-12">
         <div class="card" id="current-weather-card">
+            <div id="card-body">
+
               <p id="weekday"></p>
-              <p id="minTemp"></p>
-              <p id="maxTemp"></p>
+                <span>Low:</span>
+              <span id="minTemp"></span><br>
+                <span>High:</span>
+              <span id="maxTemp">High</span>
+            </div>
         </div>
     </div>
   <div class="row align-items-center">

@@ -2,14 +2,48 @@
 body {
     background-color: #f2f2f2;
   }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-  }
+
+
+.container {
+background-color: #F5F5F5;
+padding: 20px;
+text-align: center;
+}
+
+.row {
+display: flex;
+justify-content: center;
+}
+
+.col-sm-3 {
+background-color: white;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px #C0C0C0;
+margin: 10px;
+padding: 20px;
+text-align: center;
+width: 300px;
+height: 300px;
+}
+
+.btn {
+background: linear-gradient(to right, #00b0ff, #0091ea);
+color: white;
+font-size: 20px;
+border-radius: 10px;
+width: 200px;
+height: 200px;
+}
+.card-body{
+  background-image: url("./media/cloud-background.jpg");
+  background-size: cover;
+}
+p {
+font-size: 20px;
+font-weight: bold;
+color: #808080;
+margin: 10px 0;
+}
 
   h1 {
     color: #333;

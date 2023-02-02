@@ -46,7 +46,10 @@ function use_ip(json) {
 }
 
 function displayCurrentWeather(forecastDict) {
-  var date = forecastDict.date;
+  var dates = Object.keys(forecastDict);
+  dates.sort();
+  dates.pop();
+  date = dates[0]
   var forecast = forecastDict[date];
   var weekday = forecast[0].toString();
   var minTemp = forecast[1].toString();
@@ -62,12 +65,15 @@ function displayFutureForecast(forecastDict) {
   dates.sort();
   dates.pop();
 
-  for (var i = 0; i < dates.length; i++) {
+  for (var i = 0; i < dates.length-1; i++) {
+      if (dates[i+1]){
+
     var date = dates[i + 1]
     var forecast = forecastDict[date];
     var weekday = forecast[0].toString();
     var minTemp = forecast[1].toString();
     var maxTemp = forecast[2].toString();
+      }
 
     document.getElementById("date" + i).innerHTML = date;
     document.getElementById("weekday" + i).innerHTML = weekday;
