@@ -58,10 +58,3 @@ def get_weather(request):
          temperature)
     data = {"forecastDict": forecastDict}
     return JsonResponse(data)
-
-
-"""
-Make the page look nicer by using Bootstrap or another CSS framework in your template files.
-Make the app more customizable by allowing the user to choose their own location if the IP location that we guess is wrong
-Make the app more useful by showing the weather forecast along with the current weather. (This data is also available from Open Weather Map).
-"""
