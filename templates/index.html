@@ -1,29 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container text-center">
+<div class="container text-center ">
   <div class="row">
     <div class="col-sm-6">
-        <button class="btn btn-primary btn-block" id="get-weather">
-        My Location Weather
+        <button class="btn btn-primary btn-block" id="get_weather">
+            <h1>My Location</h1>
         </button>
     </div>
     <div class="col-sm-6">
       <button class="btn btn-primary btn-block" id="show-form-btn">
-        Different Location
+          <h1>Elsewhere</h1>
         </button>
     </div>
   </div>
-<!--     if this is triggered, hide top buttons and move form to center -->
     <script>document.getElementById("show-form-btn").addEventListener("click", function(){
     document.getElementById("location-form").style.display = "block";
-    });
-</script>
+    });</script>
     <form action ="{% url 'get_weather' %}" method="post" style="display:none;" id="location-form">
         {% csrf_token %}
-        <div class="form-group">
+        <div class="form form-group">
             <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city">
+            <input type="text" class="form form-control" id="city" name="city">
         </div>
         <div class="form-group">
             <label for="state">State</label>
@@ -36,49 +34,35 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-<!--     if this is triggered, hide buttons and show location at top -->
-<!--     <p id=weatherdata></p> -->
-<!--     IF ANYTHING BELOW THIS IS TRIGGERED
-    SHOW BOTTOM BUTTON TO START OVER WITH THE RESULTS-->
   <div class="row align items-center">
     <div class="col-12">
         <div class="card" id="current-weather-card">
-      Current Weather
+            <div class="card-header">
+                <span><span id="weekday"></span>'s Weather</span>
+            </div>
+            <div class="card-body d-flex justify-content-around">
+                <span>Low:
+                <span id="minTemp"></span></span>
+                <span>High:
+                <span id="maxTemp"></span></span>
+            </div>
         </div>
     </div>
-  <div class="row align items-center">
-      <div class="col-sm-3">
-      1 day out
+  <div class="row align-items-center">
+  {% for i in '0123' %}
+    <div class="col-sm-3 d-flex justify-content-around">
+      <div class="card">
+          <div class="card-header">
+            <p id="weekday{{ i }}"></p>
+          </div>
+          <div class="card-body">
+            <span>Low: <span id="minTemp{{ i }}"></span></span>
+            <span>High: <span id="maxTemp{{ i }}"></span></span>
+          </div>
+      </div>
     </div>
-      <div class="col-sm-3">
-      2 days out
-    </div>
-      <div class="col-sm-3">
-      3 days out
-    </div>
-      <div class="col-sm-3">
-      4 days out
-    </div>
-</div>
+  {% endfor %}
+  </div>
 {% endblock content %}
-
-
-<!-- <h1>Weather</h1>
-    <form action ="" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city">
-        </div>
-        <div class="form-group">
-            <label for="state">State</label>
-            <select class="form-select" aria-label="state">
-                <option selected>State</option>
-                {% for state in form.state %}
-                    <option value="{{ state }}">{{ state.choices }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-	<p id=weatherdata></p> -->
+</div>
+</div>

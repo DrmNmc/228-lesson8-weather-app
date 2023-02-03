@@ -1,4 +1,89 @@
-h1{
-    color: blue;
-    background-color: yellow;
+@import "../bootstrap/css/bootstrap";
+body {
+background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("media/cloud-background.jpg");
+background-size: cover;
+height: 100vh;
 }
+.container {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #888888;
+}
+
+.btn-primary {
+    background-color: #5d80a9;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    box-shadow: 0px 0px 10px #888888;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #34495E;
+}
+
+#get_weather, #show-form-btn {
+    font-size: 1.5em;
+}
+
+.form-group, .form-select {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+input[type="text"], .form-select {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    padding: 10px 15px;
+    border: none;
+    font-size: 1.2em;
+    box-shadow: 0px 0px 10px #888888;
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #888888;
+}
+
+.card-header {
+    background-color: #5d80a9;
+    accent-color: #2c0b0e;
+    color: white;
+    font-size: 1.2em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+}
+.card-header p, .card-header span, .card-body span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+.card-header p {
+  font-size: 20px;
+}
+
+.card-body span {
+  font-size: 18px;
+}
+
+
+
+
+
+.card-body {
+    padding: 20px;
+    font-size: 1.2em;
+}
+
